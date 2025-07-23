@@ -1,44 +1,27 @@
-import CommonWrapper from "../common/CommonWrapper";
-import {
-  decrement,
-  increment,
-  reset,
-} from "@/store/Slices/counterSlice/counterSlice";
+import Banner from "@/components/Modules/Home/Banner";
+
+import CommonGlowingHeader from "@/common/CommonGlowingHeader";
+import { FeaturedLocationsCarousel } from "@/components/Modules/Home/FeaturedLocation";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
+import CommonWrapper from "../common/CommonWrapper";
 
 const Home = () => {
   const count = useAppSelector((state) => state.counter.value);
   const dispatch = useAppDispatch();
 
   return (
-    <CommonWrapper>
-      <div className="h-screen bg-website-color-lightGreen">
-        <div className="flex flex-col items-center justify-center min-h-screen ">
-          <h1 className="text-2xl font-bold mb-4">Home Page</h1>
-          <h2 className="text-xl font-bold">Counter: {count}</h2>
-          <div className="mt-4 space-x-2">
-            <button
-              className="bg-blue-500 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(increment())}
-            >
-              Increment
-            </button>
-            <button
-              className="bg-red-500 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(decrement())}
-            >
-              Decrement
-            </button>
-            <button
-              className="bg-gray-500 text-white px-4 py-2 rounded"
-              onClick={() => dispatch(reset())}
-            >
-              Reset
-            </button>
-          </div>
-        </div>
+    <>
+      <CommonWrapper>
+        <Banner />
+      </CommonWrapper>
+      <div className="mt-20 md:mt-60 mb-20 md:mb-40 ">
+        <h1 className="text-white text-center text-2xl md:text-5xl leading-[60px]  md:mb-10">
+          Featured
+          <CommonGlowingHeader glowingTitle="Locations " />
+        </h1>
+        <FeaturedLocationsCarousel />
       </div>
-    </CommonWrapper>
+    </>
   );
 };
 

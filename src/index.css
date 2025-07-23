@@ -39,3 +39,25 @@ html {
 .roboto {
   font-family: var(--font-poppins-regular);
 }
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+  background-color: rgba(47, 171, 249, 0.12); /* Figma base background */
+  backdrop-filter: blur(30px); /* Apply blur effect to background */
+  border-radius: 30px;
+  border: 1px solid #2fabf9; /* Border color */
+  padding: 30px;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.card:hover {
+  transform: translateY(-5px); /* Lift the card on hover */
+  box-shadow: 0px 0px 20px 0px rgba(47, 171, 249, 0.9); /* Glowing shadow effect */
+  background-color: rgba(
+    47,
+    171,
+    249,
+    0.25
+  ); /* Change background color on hover */
+}

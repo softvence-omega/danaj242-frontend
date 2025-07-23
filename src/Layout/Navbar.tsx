@@ -16,13 +16,9 @@ const navigationLinks = [
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeTab, setActiveTab] = useState("/"); // Set default active tab as "Home"
+  const [activeTab, setActiveTab] = useState("/");
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const handleTabClick = (href) => {
+  const handleTabClick = (href: string) => {
     setActiveTab(href); // Update active tab
   };
 
