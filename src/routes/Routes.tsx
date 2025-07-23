@@ -1,14 +1,14 @@
+import AdminDashboard from "@/pages/Admin/AdminDashboard";
+import Login from "@/pages/Login";
+import Signup from "@/pages/Signup";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
-import NotFound from "../pages/NotFound";
 import Home from "../pages/Home";
+import NotFound from "../pages/NotFound";
 import AdminRoute from "./AdminRoutes";
-import AdminDashboard from "@/pages/Admin/AdminDashboard";
-import Login from "@/pages/Login";
-import Signup from "@/pages/Signup";
-import Form from "@/pages/Form";
+
 import Services from "@/pages/Services";
 
 const routes = createBrowserRouter([
@@ -32,10 +32,7 @@ const routes = createBrowserRouter([
         path: "/services",
         element: <Services />,
       },
-      {
-        path: "/form",
-        element: <Form />,
-      },
+
       {
         path: "/login",
         element: <Login />,
