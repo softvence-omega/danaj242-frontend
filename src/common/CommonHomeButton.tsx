@@ -5,10 +5,12 @@ const CommonHomeButton = ({
   isInView,
   title,
   Icon,
+  onClick,
 }: {
   isInView: boolean;
   title: string;
   Icon?: any;
+  onClick?: () => void;
 }) => {
   // keep this on parent component
   // isInView={true} as prop or
@@ -22,7 +24,10 @@ const CommonHomeButton = ({
       transition={{ duration: 0.6, ease: "easeOut", delay: 0.9 }}
       className=""
     >
-      <button className="bg-[#47B5FF] hover:bg-[#3BA3E8] text-white font-semibold px-8 py-4 rounded-full cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(71,181,255,0.5)] hover:scale-105 flex justify-center items-center gap-2">
+      <button
+        onClick={onClick}
+        className="bg-[#47B5FF] hover:bg-[#3BA3E8] text-white font-semibold text-sm md:text-base md:w-fit w-full px-8 py-4 rounded-full cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(71,181,255,0.5)] hover:scale-105 flex justify-center items-center gap-2"
+      >
         {title}
         {Icon && <Icon className="w-4 h-4 text-white" />}
       </button>

@@ -37,9 +37,8 @@ export default function StepCard({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.2 }}
       viewport={{ once: true }}
-      className="flex flex-col items-center text-center p-8 rounded-[30px] border border-[#2FABF9] h-full"
+      className="flex flex-col items-center text-center p-8 rounded-[30px] border border-[#2FABF9] h-full card bg-transparent"
       style={{
-        background: "rgba(47, 171, 249, 0.12)",
         backdropFilter: "blur(30px)",
       }}
     >
@@ -48,9 +47,9 @@ export default function StepCard({
         whileInView={{ scale: 1 }}
         transition={{ duration: 0.5, delay: index * 0.2 + 0.3 }}
         viewport={{ once: true }}
-        className="w-20 h-20 rounded-full bg-[#47B5FF] flex items-center justify-center mb-8"
+        className="w-16 h-16 md:w-28 md:h-28 rounded-full bg-[#47B5FF] flex items-center justify-center mb-8"
       >
-        <IconComponent className="w-10 h-10 text-white" />
+        <IconComponent className="w-8 h-8 md:w-14 md:h-14 text-white" />
       </motion.div>
 
       <motion.div
@@ -60,10 +59,12 @@ export default function StepCard({
         viewport={{ once: true }}
         className="space-y-4"
       >
-        <h3 className="text-white text-xl font-semibold">
+        <h3 className="text-white text-base md:text-2xl font-medium">
           {stepNumber} {title}
         </h3>
-        <p className="text-white/80 text-sm leading-relaxed">{description}</p>
+        <p className="text-white text-xs md:text-base  leading-relaxed">
+          {description}
+        </p>
       </motion.div>
     </motion.div>
   );
