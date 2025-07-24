@@ -109,3 +109,26 @@ export const locationData = [
     "image": img
   },
 ]
+export const StepsData = [
+  {
+    "id": "1",
+    "stepNumber": "Step 1:",
+    "title": "Select Your Boards",
+    "description": "Browse our extensive network of digital billboards. Choose locations based on geography, audience demographics, and real-time availability",
+    "icon": "location"
+  },
+  {
+    "id": "2",
+    "stepNumber": "Step 2:",
+    "title": "Schedule Ad's Times",
+    "description": "Define your campaign's duration, frequency, and specific display times. Optimize for peak hours or continuous brand presence effortlessly.",
+    "icon": "calendar"
+  },
+  {
+    "id": "3",
+    "stepNumber": "Step 3:",
+    "title": "Upload Your Creative",
+    "description": "Easily upload your high-resolution images or videos. Our platform ensures seamless integration and optimal display across all selected screens.",
+    "icon": "upload"
+  }
+]

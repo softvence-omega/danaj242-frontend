@@ -65,7 +65,7 @@ export default function Navbar() {
                 whileTap={{ scale: 0.8 }}
                 whileHover={{ scale: 1.1 }}
               >
-                <Button className="bg-[#38B6FF] hover:bg-[#2DA5EF] text-white cursor-pointer border-white border-1 font-medium px-4 py-2 rounded-full flex items-center gap-1">
+                <Button className="bg-[#47B5FF] hover:bg-[#3BA3E8] text-white font-semibold px-8 py-4 cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(71,181,255,0.5)] justify-center  rounded-full flex items-center gap-1 border-white border">
                   See Locations
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

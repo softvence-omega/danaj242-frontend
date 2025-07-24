@@ -1,6 +1,6 @@
 import CommonGlowingHeader from "@/common/CommonGlowingHeader";
+import CommonHomeButton from "@/common/CommonHomeButton";
 import CommonWrapper from "@/common/CommonWrapper";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function Banner() {
@@ -21,15 +21,7 @@ export default function Banner() {
             Caribbean.
           </p>
           <Link to="/login" className="mt-12 grid place-items-center">
-            <motion.button
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              whileTap={{ scale: 0.8 }}
-              whileHover={{ scale: 1.05 }}
-              className="bg-[#38B6FF] hover:bg-[#2DA5EF] text-white text-sm md:text-lg md:w-fit w-full cursor-pointer font-medium py-3 px-6 rounded-full transition-all duration-300"
-            >
-              Start now and login
-            </motion.button>
+            <CommonHomeButton title="Start Now And Login " isInView={true} />
           </Link>
         </div>
       </section>

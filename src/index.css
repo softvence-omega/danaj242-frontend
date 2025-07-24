@@ -46,7 +46,7 @@ html {
   backdrop-filter: blur(30px); /* Apply blur effect to background */
   border-radius: 30px;
   border: 1px solid #2fabf9; /* Border color */
-  padding: 30px;
+
   cursor: pointer;
 }
 

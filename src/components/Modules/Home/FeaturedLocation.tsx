@@ -4,36 +4,42 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
-import { locationData } from "@/lib/demoForm";
+import { locationData } from "@/lib/Data";
+import useMediaQuery from "react-responsive";
 
 export function FeaturedLocationsCarousel() {
+  // Media query to detect screen width larger than 2000px
+  const isLargeScreen = useMediaQuery({ query: "(min-width: 2000px)" });
+
   return (
     <section
-      className=" xl:max-w-[1760px] xl:my-auto xl:pl-20  lg:max-w-full lg:mx-auto xl:mx-0
-xl:ml-auto   "
+      className={`xl:max-w-[1660px] xl:my-auto lg:max-w-full lg:mx-auto xl:mx-0 xl:ml-auto ${
+        isLargeScreen ? "ml-auto" : ""
+      }`}
     >
-      <div className="xl:px-0 md:px-10 ">
-        <Carousel className="w-full ">
-          <CarouselContent className="flex   xl:gap-12 md: gap-6 ">
+      <div className="xl:px-0">
+        <Carousel className="w-full">
+          <CarouselContent className="flex  gap-12">
             {locationData.map((location) => (
               <CarouselItem
                 key={location.id}
-                className="2xl:basis-1/4 xl:basis-1/3 lg:basis-1/2 md:basis-1/2 sm:basis-1/1 "
+                className={`  ${
+                  isLargeScreen
+                    ? "basis-1/5"
+                    : "xl:basis-1/4 lg:basis-1/2 md:basis-1/2 sm:basis-1/1"
+                }`}
               >
-                <div className="">
-                  <Card
-                    className="xl:w-[420px] xl:h-[420px] lg:w-[450px] lg:h-[500px]  md:w-[350px] md:h-[400px]  h-[350px] my-6 mx-4 md:mx-10 p-0 rounded-[30px] border-1 border-[#2FABF9]
-                 transition-all duration-300 hover:shadow-[0px_0px_20px_0px_rgba(47,171,249,0.90)] cursor-pointer bg-transparent card"
-                  >
-                    <CardContent className="flex flex-col items-center gap-4 p-6 text-center">
-                      <div className="w-full rounded-[15px] soverflow-hidden">
+                <div>
+                  <Card className="xl:w-[420px] xl:h-[420px] lg:w-[450px] lg:h-[500px] md:w-[350px] card md:h-[400px] h-[350px] my-6 mx-4 md:mx-6 p-0 rounded-[30px] border-1 border-[#2FABF9] transition-all duration-300 hover:shadow-[0px_0px_20px_0px_rgba(47,171,249,0.90)] cursor-pointer bg-transparent">
+                    <CardContent className="flex flex-col items-center gap-4 p-6  text-center">
+                      <div className="w-full rounded-[15px] overflow-hidden">
                         <img
                           src={location.image}
                           alt={location.title}
-                          className="w-[400px]  lg:h-[200px]object-contain rounded-xl "
+                          className="w-[400px] lg:h-[200px] object-cover rounded-xl"
                         />
                       </div>
-                      <h3 className="text-white text-base md:text-xl  md:font-semibold">
+                      <h3 className="text-white text-base md:text-xl md:font-semibold">
                         {location.title}
                       </h3>
                       <p className="text-white/80 text-xs md:text-[14px]">

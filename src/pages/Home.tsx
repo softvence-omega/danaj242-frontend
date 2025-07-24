@@ -1,7 +1,9 @@
 import Banner from "@/components/Modules/Home/Banner";
 
 import CommonGlowingHeader from "@/common/CommonGlowingHeader";
+import AnalyticsSection from "@/components/Modules/Home/Analytics";
 import { FeaturedLocationsCarousel } from "@/components/Modules/Home/FeaturedLocation";
+import HowItWorksSection from "@/components/Modules/Home/HowItWorks";
 import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import CommonWrapper from "../common/CommonWrapper";
 
@@ -21,6 +23,10 @@ const Home = () => {
         </h1>
         <FeaturedLocationsCarousel />
       </div>
+      <CommonWrapper>
+        <AnalyticsSection />
+        <HowItWorksSection />
+      </CommonWrapper>
     </>
   );
 };
