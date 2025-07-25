@@ -1,6 +1,4 @@
 import AdminDashboard from "@/pages/Admin/AdminDashboard";
-import Login from "@/pages/Login";
-import Signup from "@/pages/Signup";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import About from "../pages/About";
@@ -9,7 +7,9 @@ import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import AdminRoute from "./AdminRoutes";
 
+import Login from "@/pages/Login";
 import Services from "@/pages/Services";
+import Signup from "@/pages/Signup";
 
 const routes = createBrowserRouter([
   {
@@ -34,14 +34,6 @@ const routes = createBrowserRouter([
       },
 
       {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/signup",
-        element: <Signup />,
-      },
-      {
         path: "/admin",
         element: <AdminRoute />, // This will check if the user is an admin
         children: [
@@ -49,6 +41,14 @@ const routes = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
   },
   {
     path: "*",

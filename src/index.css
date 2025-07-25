@@ -125,3 +125,12 @@ html {
 .cube:nth-child(4) {
   animation-delay: 0.6s;
 }
+
+* {
+  user-select: none;
+}
+input,
+textarea,
+select {
+  user-select: text;
+}

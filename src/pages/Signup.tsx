@@ -1,152 +1,259 @@
+"use client";
+
+import type React from "react";
+
+import CommonWrapper from "@/common/CommonWrapper";
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { CiSquarePlus } from "react-icons/ci";
-import { useNavigate } from "react-router-dom";
 
-const signupSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email format"),
-  password: z.string().min(6, "Password must be at least 6 characters"),
-  image: z
-    .any()
-    .refine((file) => file, "Image is required")
-    .optional(),
-});
+interface SignupFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  userType: "advertiser" | "agency" | "";
+  organizationName: string;
+  acceptTerms: boolean;
+}
 
-type SignupFormInputs = z.infer<typeof signupSchema>;
-
-const Signup = () => {
-  const [preview, setPreview] = useState<string | null>(null);
-  const [selectedFile, setSelectedFile] = useState<File | null>(null);
-
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm<SignupFormInputs>({
-    resolver: zodResolver(signupSchema),
+export default function SignupForm() {
+  const [formData, setFormData] = useState<SignupFormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    userType: "",
+    organizationName: "",
+    acceptTerms: false,
   });
 
-  const navigate = useNavigate();
-
-  const onSubmit = (data: SignupFormInputs) => {
-    const formData = new FormData();
-    formData.append("name", data.name);
-    formData.append("email", data.email);
-    formData.append("password", data.password);
-    if (selectedFile) formData.append("image", selectedFile);
-
-    console.log("Signup Data:", Object.fromEntries(formData));
-    navigate("/login");
+  const handleInputChange = (
+    field: keyof SignupFormData,
+    value: string | boolean
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
   };
 
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      setPreview(URL.createObjectURL(file));
-      setSelectedFile(file);
-      setValue("image", file, { shouldValidate: true });
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-200">
-      <div className="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
-        <h2 className="text-2xl font-semibold text-center">Signup</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-4">
-          {/* Name Field */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Name
-            </label>
-            <input
-              type="text"
-              {...register("name")}
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm">{errors.name.message}</p>
-            )}
-          </div>
-
-          {/* Email Field */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              {...register("email")}
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
-            )}
-          </div>
-
-          {/* Password Field */}
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              type="password"
-              {...register("password")}
-              className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-            {errors.password && (
-              <p className="text-red-500 text-sm">{errors.password.message}</p>
-            )}
-          </div>
-          <div className="mb-4">
-            <label className="block text-sm font-medium text-gray-700">
-              Profile Picture
-            </label>
-            {/* input box  */}
-            <div
-              className="relative w-full h-36 border-2 border-dashed border-gray-400 rounded-lg flex items-center justify-center cursor-pointer hover:border-blue-500 transition"
-              onClick={() => document.getElementById("fileInput")?.click()}
-            >
-              {preview ? (
-                <img
-                  src={preview}
-                  alt="Preview"
-                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
-                />
-              ) : (
-                <div className="flex flex-col items-center text-gray-500">
-                  <CiSquarePlus className="h-12 w-12" />
-                  <p className="text-sm">Click to upload</p>
-                </div>
-              )}
-            </div>
-            <input
-              type="file"
-              accept="image/*"
-              id="fileInput"
-              className="hidden"
-              onChange={handleImageChange}
-            />
-            {errors.image?.message &&
-              typeof errors.image.message === "string" && (
-                <p className="text-red-500 text-sm mt-1">
-                  {errors.image.message}
-                </p>
-              )}
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
+    <div className="min-h-screen w-full mt-20 ">
+      <CommonWrapper>
+        <div className="max-w-3xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8"
           >
-            Signup
-          </button>
-        </form>
-      </div>
+            <h1 className="text-2xl md:text-3xl font-bold text-white mb-3">
+              Don't have an account yet
+            </h1>
+            <p className="text-white/80 text-sm md:text-base leading-relaxed">
+              What's wrong with you? Create one now, or I just do not know how
+              long here.
+            </p>
+          </motion.div>
+
+          <motion.form
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            onSubmit={handleSubmit}
+            className="space-y-6"
+          >
+            {/* About You Section */}
+            <div className="space-y-4">
+              <p className="text-white text-sm">
+                Let's start with a few details{" "}
+                <span className="text-[#47B5FF]">about you</span>.
+              </p>
+
+              {/* Name Fields */}
+              <div className="grid grid-cols-2 gap-3">
+                <div>
+                  <Input
+                    placeholder="First Name"
+                    value={formData.firstName}
+                    onChange={(e) =>
+                      handleInputChange("firstName", e.target.value)
+                    }
+                    className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+                  />
+                </div>
+                <div>
+                  <Input
+                    placeholder="Last Name"
+                    value={formData.lastName}
+                    onChange={(e) =>
+                      handleInputChange("lastName", e.target.value)
+                    }
+                    className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Email Section */}
+            <div className="space-y-3">
+              <p className="text-white text-sm">
+                Now, Let's give you a login. Fill be your email.
+              </p>
+              <Input
+                type="email"
+                placeholder="Your email address"
+                value={formData.email}
+                onChange={(e) => handleInputChange("email", e.target.value)}
+                className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+              />
+            </div>
+
+            {/* Password Section */}
+            <div className="space-y-3">
+              <p className="text-white text-sm">Set yourself a password</p>
+              <div className="grid grid-cols-2 gap-3">
+                <Input
+                  type="password"
+                  placeholder="Password"
+                  value={formData.password}
+                  onChange={(e) =>
+                    handleInputChange("password", e.target.value)
+                  }
+                  className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+                />
+                <Input
+                  type="password"
+                  placeholder="Confirm Password"
+                  value={formData.confirmPassword}
+                  onChange={(e) =>
+                    handleInputChange("confirmPassword", e.target.value)
+                  }
+                  className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+                />
+              </div>
+            </div>
+
+            {/* User Type Selection */}
+            <div className="space-y-4">
+              <p className="text-white text-sm">
+                Will you use me for yourself, or on behalf of your clients ?
+              </p>
+              <p className="text-white/70 text-xs leading-relaxed">
+                Advertiser accounts are designed for businesses and individuals
+                who want to create and manage their own advertising campaigns.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {/* Advertiser Option */}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleInputChange("userType", "advertiser")}
+                  className={`p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
+                    formData.userType === "advertiser"
+                      ? "border-[#47B5FF] bg-[#47B5FF]/20"
+                      : "border-white/20 bg-white/5 hover:bg-white/10"
+                  }`}
+                >
+                  <h3 className="text-white font-medium text-sm mb-2">
+                    For Yourself (Advertiser)
+                  </h3>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    Choose this option if you want to create and manage
+                    advertising campaigns for your own business or personal use.
+                  </p>
+                </motion.div>
+
+                {/* Agency Option */}
+                <motion.div
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => handleInputChange("userType", "agency")}
+                  className={`p-4 rounded-lg border cursor-pointer transition-all duration-200 ${
+                    formData.userType === "agency"
+                      ? "border-[#47B5FF] bg-[#47B5FF]/20"
+                      : "border-white/20 bg-white/5 hover:bg-white/10"
+                  }`}
+                >
+                  <h3 className="text-white font-medium text-sm mb-2">
+                    For Your Clients (Agency)
+                  </h3>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    Choose this option if you want to manage advertising
+                    campaigns on behalf of multiple clients as an agency.
+                  </p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Organization Name */}
+            <div className="space-y-3">
+              <p className="text-white text-sm">
+                Now give your organisation a name.
+              </p>
+              <Input
+                placeholder="Organization name"
+                value={formData.organizationName}
+                onChange={(e) =>
+                  handleInputChange("organizationName", e.target.value)
+                }
+                className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+              />
+            </div>
+
+            {/* Terms & Conditions */}
+            <div className="space-y-4">
+              <div className="border-t border-white/20 pt-4">
+                <p className="text-white text-sm mb-3">
+                  The Terms & Conditions.
+                </p>
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="terms"
+                    checked={formData.acceptTerms}
+                    onCheckedChange={(checked) =>
+                      handleInputChange("acceptTerms", checked as boolean)
+                    }
+                    className="border-white/40 data-[state=checked]:bg-[#47B5FF] data-[state=checked]:border-[#47B5FF] mt-0.5"
+                  />
+                  <label
+                    htmlFor="terms"
+                    className="text-white/80 text-xs leading-relaxed cursor-pointer"
+                  >
+                    I have read, agree to and accept the terms and conditions
+                    and acknowledge the terms and conditions and privacy policy.
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="pt-4"
+            >
+              <Button
+                type="submit"
+                disabled={!formData.acceptTerms}
+                className="w-full bg-[#47B5FF] hover:bg-[#3BA3E8] text-white font-semibold py-3 rounded-lg text-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(71,181,255,0.4)] disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                Create Account →
+              </Button>
+            </motion.div>
+          </motion.form>
+        </div>
+      </CommonWrapper>
     </div>
   );
-};
-
-export default Signup;
+}
