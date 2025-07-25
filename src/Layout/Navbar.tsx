@@ -113,17 +113,13 @@ export default function Navbar() {
           <div className="lg:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  className="text-white hover:bg-white/10 p-2"
-                >
+                <Button variant="ghost" size="sm" className="text-white ">
                   <Menu className="w-6 h-6" />
                 </Button>
               </SheetTrigger>
               <SheetContent
                 side="left"
-                className="sm:w-80 w-64 bg-[var(--primary-bg-color)] p-0 border-none"
+                className="sm:w-80 lg:hidden w-64 bg-[var(--primary-bg-color)] p-0 border-none"
               >
                 <motion.div
                   initial={{ x: -300, opacity: 0 }}
@@ -151,7 +147,7 @@ export default function Navbar() {
                           animate={{ x: 0, opacity: 1 }}
                           transition={{ delay: index * 0.1, duration: 0.3 }}
                           onClick={() => setActiveTab(link.href)}
-                          className={`block px-4 py-3 text-white hover:bg-gray-100 rounded-lg font-medium transition-colors duration-200 ${
+                          className={`block px-4 py-3 text-white 0 rounded-lg font-medium transition-colors duration-200 ${
                             activeTab === link.href
                               ? "text-[#38B6FF]"
                               : "text-white"
@@ -169,8 +165,8 @@ export default function Navbar() {
                         transition={{ delay: 0.4, duration: 0.3 }}
                       >
                         <Button className="w-full bg-[#38B6FF] hover:bg-[#2DA5EF] text-white border-none font-medium py-3 rounded-full">
-                          <MapPin className="w-4 h-4 mr-2" />
                           See Locations
+                          <MapPin className="w-4 h-4 mr-2" />
                         </Button>
                       </motion.div>
 
@@ -181,7 +177,7 @@ export default function Navbar() {
                       >
                         <Button
                           variant="outline"
-                          className="w-full border-gray-300 text-white hover:bg-gray-50 font-medium py-3 rounded-full bg-transparent"
+                          className="w-full border-gray-300 text-white py-3 rounded-full bg-transparent"
                         >
                           Login
                         </Button>

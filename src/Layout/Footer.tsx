@@ -93,7 +93,7 @@ export default function Footer() {
                     >
                       <Link
                         to={link.href}
-                        className="text-blue-100 transition-colors hover:text-[#38B6FF] duration-200 text-base"
+                        className="text-blue-100 transition-colors hover:text-[#38B6FF] duration-200 text-sm md:text-base "
                       >
                         {link.label}
                       </Link>
@@ -103,10 +103,10 @@ export default function Footer() {
               </ul>
             </div>
             <div className="w-full   flex flex-col  lg:items-start items-end">
-              <h3 className="text-lg text-start font-semibold mb-4 mr-6">
+              <h3 className="text-lg text-start font-semibold mb-4 mr-2 md:mr-6">
                 Company
               </h3>
-              <ul className="space-y-3">
+              <ul className="space-y-3 text-start">
                 {companyLinks.map((link, index) => (
                   <li key={index}>
                     <motion.div
@@ -117,7 +117,7 @@ export default function Footer() {
                     >
                       <Link
                         to={link.href}
-                        className="text-blue-100 transition-colors hover:text-[#38B6FF] duration-200 text-base"
+                        className="text-blue-100 transition-colors hover:text-[#38B6FF] duration-200 text-sm md:text-base"
                       >
                         {link.label}
                       </Link>

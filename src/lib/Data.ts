@@ -15,101 +15,114 @@ export const locationData = [
   },
   {
     "id": "3",
-    "title": "Shibuya Crossing",
+    "title": "Shibuya Crossing, Tokyo",
     "description": "Capture attention in one of the world's busiest pedestrian crossings",
     "image": img
   },
   {
-    "id": "1",
-    "title": "Piccadilly Circus, London",
-    "description": "Dominate a key European intersection with iconic digital billboards",
+    "id": "4",
+    "title": "The Bund, Shanghai",
+    "description": "Witness the iconic skyline of Shanghai with digital advertising",
     "image": img
   },
   {
-    "id": "2",
-    "title": "Times Square, NYC",
-    "description": "Reach millions in the heart of global commerce and entertainment",
+    "id": "5",
+    "title": "Red Square, Moscow",
+    "description": "Explore Russia's famous landmarks while viewing dynamic billboards",
     "image": img
   },
   {
-    "id": "3",
-    "title": "Shibuya Crossing",
-    "description": "Capture attention in one of the world's busiest pedestrian crossings",
+    "id": "6",
+    "title": "Dubai Marina, UAE",
+    "description": "Experience futuristic digital billboards in Dubai's renowned marina",
     "image": img
   },
   {
-    "id": "1",
-    "title": "Piccadilly Circus, London",
-    "description": "Dominate a key European intersection with iconic digital billboards",
+    "id": "7",
+    "title": "Fifth Avenue, New York",
+    "description": "An upscale area with breathtaking billboards in the heart of NYC",
     "image": img
   },
   {
-    "id": "2",
-    "title": "Times Square, NYC",
-    "description": "Reach millions in the heart of global commerce and entertainment",
+    "id": "8",
+    "title": "Las Vegas Strip, USA",
+    "description": "The ultimate hub for flashing lights and dynamic advertising",
     "image": img
   },
   {
-    "id": "3",
-    "title": "Shibuya Crossing",
-    "description": "Capture attention in one of the world's busiest pedestrian crossings",
+    "id": "9",
+    "title": "Shinjuku, Tokyo",
+    "description": "The lively district of Shinjuku is illuminated by digital billboards",
     "image": img
   },
   {
-    "id": "1",
-    "title": "Piccadilly Circus, London",
-    "description": "Dominate a key European intersection with iconic digital billboards",
+    "id": "10",
+    "title": "Oxford Street, London",
+    "description": "Witness London’s busiest shopping street illuminated with advertisements",
     "image": img
   },
   {
-    "id": "2",
-    "title": "Times Square, NYC",
-    "description": "Reach millions in the heart of global commerce and entertainment",
+    "id": "11",
+    "title": "Times Square East, NYC",
+    "description": "The east side of Times Square showcasing digital media and advertising",
     "image": img
   },
   {
-    "id": "3",
-    "title": "Shibuya Crossing",
-    "description": "Capture attention in one of the world's busiest pedestrian crossings",
+    "id": "12",
+    "title": "King's Cross, London",
+    "description": "An iconic transport hub with immersive digital billboards",
     "image": img
   },
   {
-    "id": "1",
-    "title": "Piccadilly Circus, London",
-    "description": "Dominate a key European intersection with iconic digital billboards",
+    "id": "13",
+    "title": "Piazza del Duomo, Milan",
+    "description": "Milan's famous landmark surrounded by dynamic advertising displays",
     "image": img
   },
   {
-    "id": "2",
-    "title": "Times Square, NYC",
-    "description": "Reach millions in the heart of global commerce and entertainment",
+    "id": "14",
+    "title": "Mall of America, Minnesota",
+    "description": "Experience billboards in one of the largest malls in the USA",
     "image": img
   },
   {
-    "id": "3",
-    "title": "Shibuya Crossing",
-    "description": "Capture attention in one of the world's busiest pedestrian crossings",
+    "id": "15",
+    "title": "Shenzhen, China",
+    "description": "The modern city of Shenzhen illuminated with high-tech billboards",
     "image": img
   },
   {
-    "id": "1",
-    "title": "Piccadilly Circus, London",
-    "description": "Dominate a key European intersection with iconic digital billboards",
+    "id": "16",
+    "title": "Harajuku, Tokyo",
+    "description": "A vibrant district in Tokyo featuring the latest digital advertising",
     "image": img
   },
   {
-    "id": "2",
-    "title": "Times Square, NYC",
-    "description": "Reach millions in the heart of global commerce and entertainment",
+    "id": "17",
+    "title": "Times Square West, NYC",
+    "description": "The west side of Times Square, famous for its extravagant digital displays",
     "image": img
   },
   {
-    "id": "3",
-    "title": "Shibuya Crossing",
-    "description": "Capture attention in one of the world's busiest pedestrian crossings",
+    "id": "18",
+    "title": "Roppongi Hills, Tokyo",
+    "description": "A high-end district in Tokyo featuring luxurious digital billboards",
     "image": img
   },
+  {
+    "id": "19",
+    "title": "Bucharest, Romania",
+    "description": "The capital of Romania with a growing digital billboard presence",
+    "image": img
+  },
+  {
+    "id": "20",
+    "title": "Hollywood Boulevard, LA",
+    "description": "Hollywood's iconic street illuminated with massive digital ads",
+    "image": img
+  }
 ]
+
 export const StepsData = [
   {
     "id": "1",
@@ -166,7 +179,7 @@ export const RatingData = [
     "location": "London, UK",
     "comment": "The booking process was easy, and the villa was fantastic. I highly recommend it!",
     "rating": 5.0,
-    "profileImage": rating, // Keep the image same for all reviews
+    "profileImage": rating,
   },
   {
     "id": "2",

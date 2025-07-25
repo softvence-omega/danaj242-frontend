@@ -17,11 +17,11 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <>
+    <div className="overflow-hidden">
       <CommonWrapper>
         <Banner />
       </CommonWrapper>
-      <div className="my-16 md:mt-60 md:mb-40 ">
+      <div className=" ">
         <h1 className="text-white text-center text-2xl md:text-5xl leading-[60px]  md:mb-10">
           Featured
           <CommonGlowingHeader glowingTitle="Locations " />
@@ -36,7 +36,7 @@ const Home = () => {
         <FaqSection />
         <ContactSection />
       </CommonWrapper>
-    </>
+    </div>
   );
 };
 

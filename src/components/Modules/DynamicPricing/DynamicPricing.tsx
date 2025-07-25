@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PricingCard from "./PricingCard";
 const DynamicPricing = () => {
   return (
-    <section className="w-full pt-20 md:pt-40 px-4">
+    <section className="w-full pt-20 md:pt-40 ">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
