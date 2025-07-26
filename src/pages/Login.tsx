@@ -1,18 +1,14 @@
+import CommonLoginButton from "@/common/CommonLoginButton";
 import CommonWrapper from "@/common/CommonWrapper";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { Eye, EyeOff } from "lucide-react"; // Importing eye icons from lucide-react
+import { ArrowRight, Eye, EyeOff } from "lucide-react"; // Importing eye icons from lucide-react
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
-
-interface LoginFormData {
-  email: string;
-  password: string;
-}
 
 const loginSchema = z.object({
   email: z.string().email("Invalid email format"),
@@ -49,9 +45,9 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
+    <div className="min-h-screen flex items-center justify-center my-10 md:my-0 ">
       <CommonWrapper>
-        <div className="w-full max-w-4xl">
+        <div className="w-full max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -75,7 +71,7 @@ const Login = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            onSubmit={handleSubmit(onSubmit)} // Using handleSubmit for form submission
+            onSubmit={handleSubmit(onSubmit)}
             className="space-y-16"
           >
             <div className="grid grid-cols-1 my-20 md:my-32 md:grid-cols-2 gap-6 md:gap-16">
@@ -88,9 +84,9 @@ const Login = () => {
                   type="email"
                   placeholder="Email Address"
                   {...register("email")}
-                  className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+                  className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-base md:text-lg  placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
                 />
-                {/* Error message */}
+
                 {errors.email && (
                   <p className="mt-2 text-red-500 text-sm">
                     {errors.email.message}
@@ -108,7 +104,7 @@ const Login = () => {
                     type={passwordVisible ? "text" : "password"}
                     placeholder="Password"
                     {...register("password")}
-                    className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white text-lg md:text-xl placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
+                    className="w-full px-0 py-4 bg-transparent border-0 border-b border-white/40 text-white md:text-lg text-base placeholder:text-[#5575C4] focus:outline-none focus:border-white focus-visible:ring-0 focus-visible:ring-offset-0 rounded-none transition-all duration-300"
                   />
                   <div
                     className="absolute top-1/2 right-0 transform -translate-y-1/2 cursor-pointer"
@@ -121,7 +117,7 @@ const Login = () => {
                     )}
                   </div>
                 </div>
-                {/* Error message */}
+
                 {errors.password && (
                   <p className="mt-2 text-red-500 text-sm">
                     {errors.password.message}
@@ -134,10 +130,10 @@ const Login = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-8"
+              className="flex flex-col lg:flex-row justify-between items-start lg:items-center  gap-8 lg:gap-12 lg:pt-8"
             >
               <div className="text-white text-base md:text-lg">
-                {"Don't have an account? "}
+                {"Don't have an account ? "}
                 <Link to="/signup">
                   <Button
                     type="button"
@@ -150,20 +146,24 @@ const Login = () => {
                 </Link>
                 {" it's free."}
               </div>
-
-              <Button
-                type="button"
-                variant="link"
-                onClick={handleForgotPassword}
-                className="text-white hover:text-[#14CA74]  cursor-pointer p-0 h-auto text-base md:text-lg"
-              >
-                Forget Password ?
-              </Button>
+              <div className=" flex lg:justify-center lg:items-center gap-6 flex-col justify-start items-start lg:flex-row w-full lg:w-fit">
+                <Button
+                  type="button"
+                  variant="link"
+                  onClick={handleForgotPassword}
+                  className="text-white hover:text-[#14CA74]  cursor-pointer p-0 h-auto text-start text-base md:text-lg"
+                >
+                  Forget Password ?
+                </Button>
+                <div className="w-full flex-1">
+                  <CommonLoginButton
+                    isInView={true}
+                    title="Log In"
+                    Icon={ArrowRight}
+                  />
+                </div>
+              </div>
             </motion.div>
-
-            <Button type="submit" className="hidden">
-              Submit
-            </Button>
           </motion.form>
         </div>
       </CommonWrapper>

@@ -25,6 +25,7 @@ const CommonHomeButton = ({
       className=""
     >
       <button
+        type="submit"
         onClick={onClick}
         className="bg-[#47B5FF] hover:bg-[#3BA3E8] text-white font-semibold text-sm md:text-base md:w-fit w-full px-8 py-4 rounded-full cursor-pointer transition-all duration-300 hover:shadow-[0_0_30px_rgba(71,181,255,0.5)] hover:scale-105 flex justify-center items-center gap-2"
       >

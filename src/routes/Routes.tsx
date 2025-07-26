@@ -1,15 +1,15 @@
-import AdminDashboard from "@/pages/Admin/AdminDashboard";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
-import AdminRoute from "./AdminRoutes";
 
+import { UserDashboardLayout } from "@/Layout/UserLayout";
 import Login from "@/pages/Login";
 import Services from "@/pages/Services";
 import Signup from "@/pages/Signup";
+import UserDashboard from "@/pages/UserDashboard/UserDashboard";
 
 const routes = createBrowserRouter([
   {
@@ -32,13 +32,15 @@ const routes = createBrowserRouter([
         path: "/services",
         element: <Services />,
       },
-
+    ],
+  },
+  {
+    path: "/user-dashboard",
+    element: <UserDashboardLayout />,
+    children: [
       {
-        path: "/admin",
-        element: <AdminRoute />, // This will check if the user is an admin
-        children: [
-          { path: "", element: <AdminDashboard /> }, // Admin Dashboard
-        ],
+        index: true,
+        element: <UserDashboard />,
       },
     ],
   },
