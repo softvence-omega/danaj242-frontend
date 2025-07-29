@@ -4,7 +4,11 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import img from "../../../assets/Home/laptop2.png";
 import vdo from "../../../assets/Home/video.mp4";
+import BlurText from "./BlurText";
 export default function Banner() {
+  const handleAnimationComplete = () => {
+    console.log("Animation completed!");
+  };
   return (
     <section className="w-full mt-24 md:mt-36 lg:mt-40 relative z-0">
       <motion.div
@@ -56,18 +60,22 @@ export default function Banner() {
             </motion.div>
           ))}
         </motion.h1>
-
         <motion.p
-          className="text-white mt-8 md:text-center text-sm md:text-base my-6 max-w-[600px] mx-auto"
+          className="text-white mt-8   my-6 max-w-[600px] mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          Unlock the full potential of your brand with digital billboards in
+          <BlurText
+            text=" Unlock the full potential of your brand with digital billboards in
           Nassau, Bahamas, and beyond. SCNE Ads offers a user-friendly platform
-          to advertise on the most strategic locations in the Caribbean.
+          to advertise on the most strategic locations in the Caribbean.!"
+            delay={50}
+            animateBy="words"
+            direction="top"
+            className="text-sm md:text-base md:text-center mb-8"
+          />
         </motion.p>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -125,7 +133,7 @@ export default function Banner() {
             >
               <video
                 src={vdo}
-                controls
+                controls={false}
                 autoPlay
                 muted
                 loop
