@@ -6,9 +6,6 @@ import img from "../../../assets/Home/laptop2.png";
 import vdo from "../../../assets/Home/video.mp4";
 import BlurText from "./BlurText";
 export default function Banner() {
-  const handleAnimationComplete = () => {
-    console.log("Animation completed!");
-  };
   return (
     <section className="w-full mt-24 md:mt-36 lg:mt-40 relative z-0">
       <motion.div

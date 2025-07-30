@@ -9,6 +9,12 @@
   --font-poppins-regular: "Poppins", sans-serif;
   --font-roboto-regular: "Roboto", sans-serif;
 }
+@theme {
+  --color-secondary-color: #38b6ff;
+  --color-primary-bg-color: #033579;
+  --color-bg-dashboard: #081028;
+  --color-border: #283f81;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -34,6 +40,7 @@ html {
   body {
     background-color: var(--primary-bg-color);
     color: var(--primary-text-color);
+
     font-family: var(--font-poppins-regular);
   }
 }
@@ -133,4 +140,24 @@ input,
 textarea,
 select {
   user-select: text;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #47b5ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(71, 181, 255, 0.8);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #3ba3e8;
+  box-shadow: 0 0 20px rgba(59, 163, 232, 0.8);
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
 }
