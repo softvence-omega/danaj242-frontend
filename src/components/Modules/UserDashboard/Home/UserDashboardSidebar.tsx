@@ -4,20 +4,20 @@ import { motion } from "framer-motion";
 import { Home, LayoutDashboard, Plus, Settings, Upload } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../../../assets/logo.png";
 const sidebarItems = [
   {
     title: "MY SCNE",
     items: [
       {
-        title: "Dashboard",
-        icon: LayoutDashboard,
+        title: "Home",
+        icon: Home,
         href: "/dashboard",
       },
       {
-        title: "Home",
-        icon: Home,
-        href: "/",
+        title: "Dashboard",
+        icon: LayoutDashboard,
+        href: "/dashboard/metrics",
       },
     ],
   },
@@ -48,7 +48,7 @@ export function UserDashboardSidebar() {
 
   return (
     <div
-      className={cn("flex h-full w-84 flex-col px-4 border-r border-[#283F81]")}
+      className={cn("flex h-full w-80 flex-col px-4 border-r border-[#283F81]")}
     >
       <div className="flex h-12 px-6 mt-8   items-center  ">
         <div className="w-fit h-12   ">
@@ -95,7 +95,10 @@ export function UserDashboardSidebar() {
       </div>
 
       <div className="px-6  mt-10">
-        <CommonDashboardButton title="New Campaign" Icon={Plus} />
+        <Link to="/new-campaign">
+          {" "}
+          <CommonDashboardButton title="New Campaign" Icon={Plus} />
+        </Link>
       </div>
     </div>
   );

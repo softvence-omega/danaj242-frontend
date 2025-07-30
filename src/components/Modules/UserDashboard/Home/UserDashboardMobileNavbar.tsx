@@ -7,7 +7,7 @@ import { LogOut, Menu, Plus } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { navItems, sidebarItems } from ".";
-import logo from "../../assets/logo.png";
+import logo from "../../../../assets/logo.png";
 
 const UserDashboardMobileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -104,7 +104,9 @@ const UserDashboardMobileNavbar = () => {
             </div>
 
             <div className="px-3 py-4">
-              <CommonDashboardButton title="New Campaign" Icon={Plus} />
+              <Link to="/new-campaign">
+                <CommonDashboardButton title="New Campaign" Icon={Plus} />
+              </Link>
             </div>
 
             <div className="px-3 pb-6">

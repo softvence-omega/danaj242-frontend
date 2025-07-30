@@ -1,5 +1,5 @@
-import UserDashboardMobileNavbar from "@/pages/UserDashboard/UserDashboardMobileNavbar";
-import { UserDashboardSidebar } from "@/pages/UserDashboard/UserDashboardSidebar";
+import UserDashboardMobileNavbar from "@/components/Modules/UserDashboard/Home/UserDashboardMobileNavbar";
+import { UserDashboardSidebar } from "@/components/Modules/UserDashboard/Home/UserDashboardSidebar";
 import { Outlet } from "react-router-dom";
 
 export function UserDashboardLayout() {
@@ -9,9 +9,9 @@ export function UserDashboardLayout() {
         <UserDashboardSidebar />
       </aside>
 
-      <div className="flex flex-col flex-1 ">
-        <main className="flex-1 overflow-auto">
-          <div className="h-full px-4 md:px-6">
+      <div className="flex flex-col flex-1 overflow-hidden ">
+        <main className="flex-1 ">
+          <div className=" px-4 md:px-6">
             <UserDashboardMobileNavbar />
             <div className="">
               <Outlet />

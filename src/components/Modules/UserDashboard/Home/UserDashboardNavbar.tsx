@@ -13,14 +13,14 @@ import { navItems } from ".";
 export function UserDashboardNavbar() {
   const userName = "Danaj";
   return (
-    <header className="hidden lg:block sticky mt-0 md:mt-6 top-0 z-50 w-full text-white">
-      <div className="flex h-20 items-center justify-between lg:border-none border-b border-[#283F81] ">
+    <header className="hidden lg:block sticky mt-0 md:mt-6 lg:mt-10 xl:mt-6 top-0 z-50 w-full text-white">
+      <div className="flex  h-20 items-center justify-between border-none border-b border-[#283F81] ">
         <div className="flex items-center">
           <h1 className="text-lg md:text-[38px] ">
             Hey, <span className="text-[#47B5FF]">{userName}</span>.
           </h1>
         </div>
-        <nav className="  justify-center lg:flex items-center text-nowrap space-x-4">
+        <div className="  justify-center flex xl:gap-0  gap-4 items-center flex-wrap space-x-4">
           {navItems.map((item, idx) => {
             const Icon = item.icon;
             return (
@@ -33,7 +33,9 @@ export function UserDashboardNavbar() {
                 >
                   {item.title} <Icon className="h-4 block lg:hidden w-4 mr-2" />
                 </motion.button>
-                {idx == 1 && <div className="h-8 border-l border-white"></div>}
+                {idx == 1 && (
+                  <div className="h-8 hidden xl:block border-l border-white"></div>
+                )}
               </>
             );
           })}
@@ -77,7 +79,7 @@ export function UserDashboardNavbar() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );
