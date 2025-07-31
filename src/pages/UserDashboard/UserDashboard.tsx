@@ -1,5 +1,6 @@
 import DashboardBanner from "@/components/Modules/UserDashboard/Home/DashboardBanner";
-import { UserDashboardNavbar } from "../../components/Modules/UserDashboard/Home/UserDashboardNavbar";
+import SpecialSection from "@/components/Modules/UserDashboard/Home/SpecialSection";
+import { UserDashboardNavbar } from "../../components/Modules/UserDashboard/UserDashboardNavbar";
 
 const UserDashboard = () => {
   return (
@@ -7,6 +8,7 @@ const UserDashboard = () => {
       <UserDashboardNavbar />
 
       <DashboardBanner />
+      <SpecialSection />
     </div>
   );
 };

@@ -1,5 +1,5 @@
-import UserDashboardMobileNavbar from "@/components/Modules/UserDashboard/Home/UserDashboardMobileNavbar";
-import { UserDashboardSidebar } from "@/components/Modules/UserDashboard/Home/UserDashboardSidebar";
+import UserDashboardMobileNavbar from "@/components/Modules/UserDashboard/UserDashboardMobileNavbar";
+import { UserDashboardSidebar } from "@/components/Modules/UserDashboard/UserDashboardSidebar";
 import { Outlet } from "react-router-dom";
 
 export function UserDashboardLayout() {

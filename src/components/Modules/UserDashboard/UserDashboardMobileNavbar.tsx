@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 import { LogOut, Menu, Plus } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { navItems, sidebarItems } from ".";
-import logo from "../../../../assets/logo.png";
+import logo from "../../../assets/logo.png";
+import { navItems, sidebarItems } from "./Home";
 
 const UserDashboardMobileNavbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { motion } from "framer-motion";
 import { ChevronDown, LogOut, User } from "lucide-react";
-import { navItems } from ".";
+import { navItems } from "./Home";
 
 export function UserDashboardNavbar() {
   const userName = "Danaj";
