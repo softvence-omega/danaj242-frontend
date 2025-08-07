@@ -17,8 +17,11 @@
 @theme {
   --color-secondary-color: #38b6ff;
   --color-primary-bg-color: #033579;
+  --color-title-color: #c3cee9;
   --color-bg-dashboard: #081028;
+  --color-dashboard-card-bg: #0b1739;
   --color-border: #283f81;
+  --color-dashboard-border: #38b6ff;
 }
 html {
   scroll-behavior: smooth;
@@ -58,7 +61,7 @@ html {
   background-color: rgba(56, 182, 255, 0.12);
   backdrop-filter: blur(15px);
 
-  border: 1px solid #2fabf9;
+  /* border: 1px solid #2fabf9; */
 
   cursor: pointer;
 }

@@ -1,5 +1,3 @@
-"use client";
-
 interface RatingComponentProps {
   rating: number;
   maxRating?: number;

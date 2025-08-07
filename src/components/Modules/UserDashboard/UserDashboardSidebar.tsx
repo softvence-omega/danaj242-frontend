@@ -1,54 +1,20 @@
 import CommonDashboardButton from "@/common/CommonDashBoardButton";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { Home, LayoutDashboard, Plus, Settings, Upload } from "lucide-react";
+import { Plus } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
-const sidebarItems = [
-  {
-    title: "MY SCNE",
-    items: [
-      {
-        title: "Home",
-        icon: Home,
-        href: "/dashboard",
-      },
-      {
-        title: "Dashboard",
-        icon: LayoutDashboard,
-        href: "/dashboard/metrics",
-      },
-    ],
-  },
-  {
-    title: "Management",
-    items: [
-      {
-        title: "Campaign Management",
-        icon: Settings,
-        href: "/dashboard/campaigns",
-      },
-    ],
-  },
-  {
-    title: "Media",
-    items: [
-      {
-        title: "My Uploads",
-        icon: Upload,
-        href: "/dashboard/uploads",
-      },
-    ],
-  },
-];
+import { sidebarItems } from "./Home";
 
 export function UserDashboardSidebar() {
-  const [activeItem, setActiveItem] = useState("/dashboard");
+  const [activeItem, setActiveItem] = useState("/user-dashboard");
 
   return (
     <div
-      className={cn("flex h-full w-80 flex-col px-4 border-r border-[#283F81]")}
+      className={cn(
+        "sticky top-0 left-0 z-50 h-screen flex w-80 flex-col px-4 border-r border-[#283F81] "
+      )}
     >
       <div className="flex h-12 px-6 mt-8   items-center  ">
         <div className="w-fit h-12   ">

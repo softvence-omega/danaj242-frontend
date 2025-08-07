@@ -196,7 +196,7 @@ export default function Navbar() {
                   </div>
 
                   <div className="p-6 border-t border-gray-200">
-                    <p className="text-sm text-gray-400 text-center">
+                    <p className="text-sm text-title-color text-center">
                       © 2025 SCNE Ads. All rights reserved.
                     </p>
                   </div>

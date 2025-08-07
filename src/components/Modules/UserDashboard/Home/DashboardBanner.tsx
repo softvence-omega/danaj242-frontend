@@ -1,5 +1,6 @@
 import CommonDashboardButton from "@/common/CommonDashBoardButton";
 import { Plus } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { EffectCoverflow, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,14 +20,17 @@ const slidesData = [
 ];
 
 const DashboardBanner = () => {
+  const [activeSlide, setActiveSlide] = useState(1);
+
   return (
-    <div className="mt-10">
+    <div className="mt-10 w-full">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={1}
         initialSlide={1}
+        onSlideChange={(swiper) => setActiveSlide(swiper.realIndex)}
         coverflowEffect={{
           rotate: 50,
           stretch: 50,
@@ -48,10 +52,10 @@ const DashboardBanner = () => {
             slidesPerView: 1,
           },
         }}
-        className="mySwiper h-[300px] xl:max-w-[1800px] lg:max-w-7xl md:max-w-2xl mx-auto m-0 p-0 w-full"
+        className="mySwiper w-full h-[250px] mx-0 p-0"
       >
         {slidesData.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="p-0 m-0">
             <div className="relative w-full h-full">
               <img
                 src={slide.img}
@@ -59,16 +63,18 @@ const DashboardBanner = () => {
                 className="object-cover w-full h-full"
               />
 
-              <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/30 to-black/30  flex flex-col justify-center items-center">
-                <img
-                  src={logo}
-                  alt="Logo"
-                  className="w-24 h-24 mb-4 object-contain"
-                />
-                <Link to="/new-campaign">
-                  <CommonDashboardButton title="New Campaign " Icon={Plus} />
-                </Link>
-              </div>
+              {activeSlide === index && (
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black/50 to-black/80 flex flex-col justify-center items-center">
+                  <img
+                    src={logo}
+                    alt="Logo"
+                    className="w-24 h-24 mb-4 object-contain"
+                  />
+                  <Link to="/new-campaign">
+                    <CommonDashboardButton title="New Campaign" Icon={Plus} />
+                  </Link>
+                </div>
+              )}
             </div>
           </SwiperSlide>
         ))}

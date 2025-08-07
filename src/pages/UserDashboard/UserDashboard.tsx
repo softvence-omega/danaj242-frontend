@@ -1,14 +1,17 @@
 import DashboardBanner from "@/components/Modules/UserDashboard/Home/DashboardBanner";
-import SpecialSection from "@/components/Modules/UserDashboard/Home/SpecialSection";
+
+import LocationTabs from "@/components/Modules/UserDashboard/Home/HomeTabs/LocationTabs";
+import SpecialSection from "@/components/Modules/UserDashboard/Home/SpecialSection/SpecialSection";
 import { UserDashboardNavbar } from "../../components/Modules/UserDashboard/UserDashboardNavbar";
 
 const UserDashboard = () => {
   return (
-    <div>
+    <div className="mb-20">
       <UserDashboardNavbar />
 
       <DashboardBanner />
       <SpecialSection />
+      <LocationTabs />
     </div>
   );
 };

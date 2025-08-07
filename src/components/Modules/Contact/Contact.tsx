@@ -48,7 +48,7 @@ export default function ContactSection() {
           >
             <button
               onClick={handleViewLargerMap}
-              className="absolute top-4 left-4   bg-white/90 hover:bg-white text-gray-800 text-sm font-medium px-3 py-2 rounded-lg shadow-md transition-all duration-200 flex items-center z-50 gap-2"
+              className="absolute top-4 left-4   bg-white/90 hover:bg-white text-[#343B4F] text-sm font-medium px-3 py-2 rounded-lg shadow-md transition-all duration-200 flex items-center z-50 gap-2"
             >
               <Maximize2 className="w-4 h-4" />
               View Larger Map

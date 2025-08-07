@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   Select,
   SelectContent,
@@ -5,22 +6,43 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CountryCodes } from "@/lib/Data";
-//   need to fix later
-const CommonSelect = () => {
+interface Option {
+  value: string;
+  label: string;
+}
+interface CommonSelectProps {
+  setValue: (value: string) => void;
+  options: Option[];
+  Icon: any;
+  Value: string;
+  bgColor?: string;
+}
+
+const CommonSelect = ({
+  Value,
+  bgColor = "",
+  Icon,
+  setValue,
+  options,
+}: CommonSelectProps) => {
   return (
-    <Select onValueChange={(value) => setCountryCode(value)}>
-      <SelectTrigger className="w-fit cursor-pointer bg-[#89AAD5] text-white border-none rounded-xl px-4 py-3">
-        <SelectValue placeholder="AU" />
+    <Select onValueChange={(value) => setValue(value)}>
+      <SelectTrigger
+        className={`w-full md:w-fit cursor-pointer  text-white border-none rounded-xl px-4 flex- justify-center focus:ring-0 focus:border-none focus:outline-none items-center gap-2 py-3 ${
+          bgColor ? bgColor : "bg-[#89AAD5]"
+        }`}
+      >
+        {Icon && <Icon className="w-4 h-4 text-white" />}
+        <SelectValue placeholder={Value} />
       </SelectTrigger>
-      <SelectContent className=" bg-[#0B1739]  text-white border-none">
-        {CountryCodes.map((country) => (
+      <SelectContent className="  bg-[#0B1739]  text-white border-none">
+        {options.map((option) => (
           <SelectItem
-            key={country.code}
-            value={country.value}
-            className="cursor-pointer  hover:bg-[linear-gradient(291deg,_#38B6FF_-45.64%,_#09489D_69.04%)] hover:text-white"
+            key={option.label}
+            value={option.value}
+            className="cursor-pointer   hover:bg-[linear-gradient(291deg,_#38B6FF_-45.64%,_#09489D_69.04%)] hover:text-white"
           >
-            {country.label} ({country.code})
+            {option.label}
           </SelectItem>
         ))}
       </SelectContent>
