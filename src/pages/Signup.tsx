@@ -101,7 +101,7 @@ const Signup = () => {
   };
 
   const handleSubmitForm = (data: SignupFormInputs) => {
-    console.log("Signup Form Data:", data);
+    console.log("Signup Form Data:", data, countryCode, phoneNumber);
   };
 
   return (

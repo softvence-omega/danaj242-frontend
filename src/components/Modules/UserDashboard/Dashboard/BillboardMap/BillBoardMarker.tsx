@@ -3,7 +3,8 @@ import { motion } from "framer-motion";
 import { divIcon } from "leaflet";
 import { Eye, MapPin } from "lucide-react";
 import { Marker, Popup } from "react-leaflet";
-import { BillboardLocation } from "..";
+import { toast } from "sonner";
+import { BillboardLocation } from ".";
 
 const getMarkerIcon = (status: BillboardLocation["status"]) => {
   const colors = {
@@ -62,6 +63,10 @@ export function BillboardMarker({
   location,
   onViewCampaigns,
 }: BillboardMarkerProps) {
+  const handleViewCampaigns = () => {
+    toast.success("View campaigns for: " + location.name);
+  };
+
   return (
     <Marker
       position={[location.lat, location.lng]}
@@ -69,7 +74,7 @@ export function BillboardMarker({
     >
       <Popup closeButton={true}>
         <div className=" space-y-1">
-          {location.image && (
+          {/* {location.image && (
             <div className="w-full h-32 rounded-lg overflow-hidden mb-2">
               <img
                 src={location.image || "/placeholder.svg"}
@@ -77,7 +82,7 @@ export function BillboardMarker({
                 className="w-full h-full object-fill object-top rounded-lg"
               />
             </div>
-          )}
+          )} */}
 
           <div className="">
             <div className="flex justify-between items-start">
@@ -114,7 +119,10 @@ export function BillboardMarker({
           <div className="pt-1">
             <motion.button
               whileTap={{ scale: 0.95 }}
-              onClick={() => onViewCampaigns?.(location)}
+              onClick={() => {
+                onViewCampaigns?.(location);
+                handleViewCampaigns();
+              }}
               whileHover={{ scale: 1.05 }}
               className="w-full h-10 bg-[linear-gradient(291deg,_#38B6FF_-45.64%,_#09489D_69.04%)] cursor-pointer  text-white text-sm rounded-lg flex items-center justify-center gap-2"
             >

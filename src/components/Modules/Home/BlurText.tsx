@@ -1,8 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-const buildKeyframes = (from, steps): any => {
+const buildKeyframes = (from, steps): { [key: string]: string[] } => {
   const keys = new Set([
     ...Object.keys(from),
     ...[].concat(...steps.map((s) => Object.keys(s))), // Flatten the steps to make sure flatMap works

@@ -126,9 +126,8 @@ export function ConversionsChart({
   }
 
   return (
-    <div className="bg-[#0B1739] rounded-tr-xl p-4 border-t border-r border-b  border-[#343B4F] ">
+    <div className="bg-[#0B1739] rounded-tr-xl p-4 border-t border-l xl:border-l-0 border-r border-b  border-[#343B4F] rounded-l-lg rounded-b-xl xl:rounded-b-none xl:rounded-l-none  rounded-r-lg  ">
       {/* Header */}
-
       <MetricCard
         title="Total Conversions"
         value={totalConversions.value}
@@ -147,7 +146,6 @@ export function ConversionsChart({
           height="110%"
         />
       </div>
-
       {/* Footer */}
       <div className="flex items-center justify-between text-xs">
         <span className="text-gray-500">Last 12 months</span>

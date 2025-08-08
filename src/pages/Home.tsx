@@ -9,13 +9,9 @@ import ContactSection from "@/components/Modules/Contact/Contact";
 import FaqSection from "@/components/Modules/FAQ/FAQ";
 import HowItWorksSection from "@/components/Modules/HowItWorks/HowItWorks";
 import Testimonial from "@/components/Modules/Testimonial/Testimonial";
-import { useAppDispatch, useAppSelector } from "@/hooks/useRedux";
 import CommonWrapper from "../common/CommonWrapper";
 
 const Home = () => {
-  const count = useAppSelector((state) => state.counter.value);
-  const dispatch = useAppDispatch();
-
   return (
     <div className="overflow-hidden">
       <CommonWrapper>

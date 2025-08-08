@@ -3,7 +3,7 @@ import CommonDashboardButton from "@/common/CommonDashBoardButton";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
-import { BillboardLocation, billboardLocations, mapConfig } from "..";
+import { BillboardLocation, billboardLocations, mapConfig } from ".";
 import { BillboardMarker } from "./BillBoardMarker";
 
 function BillboardWorldMap() {

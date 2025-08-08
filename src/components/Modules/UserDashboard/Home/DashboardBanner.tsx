@@ -23,7 +23,7 @@ const DashboardBanner = () => {
   const [activeSlide, setActiveSlide] = useState(1);
 
   return (
-    <div className="mt-10 w-full">
+    <div className="mt-20 w-full">
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -41,9 +41,9 @@ const DashboardBanner = () => {
         pagination={true}
         modules={[EffectCoverflow, Pagination]}
         breakpoints={{
-          1024: {
+          1280: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 20,
           },
           768: {
             slidesPerView: 2,
@@ -52,7 +52,7 @@ const DashboardBanner = () => {
             slidesPerView: 1,
           },
         }}
-        className="mySwiper w-full h-[250px] mx-0 p-0"
+        className="mySwiper w-full  h-[250px] mx-0 p-0"
       >
         {slidesData.map((slide, index) => (
           <SwiperSlide key={index} className="p-0 m-0">
@@ -70,7 +70,7 @@ const DashboardBanner = () => {
                     alt="Logo"
                     className="w-24 h-24 mb-4 object-contain"
                   />
-                  <Link to="/new-campaign">
+                  <Link to="/user-dashboard/new-campaign">
                     <CommonDashboardButton title="New Campaign" Icon={Plus} />
                   </Link>
                 </div>

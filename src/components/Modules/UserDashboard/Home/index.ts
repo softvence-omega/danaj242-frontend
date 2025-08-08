@@ -55,6 +55,7 @@ export const sidebarItems = [
             },
         ],
     },
+
 ];
 export interface LocationCard {
     id: string

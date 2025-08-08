@@ -157,7 +157,7 @@ export function SpendImpressionsChart({
   }
 
   return (
-    <div className="bg-[#0B1739] rounded-l-xl p-6 border border-[#343B4F]">
+    <div className="bg-[#0B1739] rounded-l-xl rounded-r-xl xl:rounded-r-none p-6 border border-[#343B4F]">
       {/* Header */}
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6 gap-4">
         <MetricCard

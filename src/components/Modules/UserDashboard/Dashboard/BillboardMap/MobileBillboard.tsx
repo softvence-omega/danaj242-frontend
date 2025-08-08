@@ -5,7 +5,7 @@ import { MapContainer, TileLayer } from "react-leaflet";
 
 import CommonDashboardButton from "@/common/CommonDashBoardButton";
 import "leaflet/dist/leaflet.css";
-import { BillboardLocation, billboardLocations, mapConfig } from "..";
+import { BillboardLocation, billboardLocations, mapConfig } from ".";
 import { BillboardMarker } from "./BillBoardMarker";
 
 export default function MobileBillboardMap() {

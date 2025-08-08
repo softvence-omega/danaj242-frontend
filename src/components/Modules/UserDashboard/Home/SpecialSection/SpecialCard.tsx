@@ -20,7 +20,7 @@ const SpecialCard = ({
 }: CardProps) => {
   return (
     <motion.div
-      className="rounded-lg m-6 cursor-pointer h-[260px]  w-full  overflow-hidden flex flex-col"
+      className="rounded-lg m-6 cursor-pointer h-[300px] xl:h-[280px]  w-full  overflow-hidden flex flex-col"
       whileHover={{ scale: 1.04 }}
       whileTap={{ scale: 0.98 }}
     >
@@ -51,7 +51,7 @@ const SpecialCard = ({
             </div>
 
             <div className="mt-2 ml-4">
-              <span className=" text-base font-semibold">{price}</span>
+              <span className=" text-base font-semibold">$ {price} USD</span>
             </div>
           </div>
         </div>

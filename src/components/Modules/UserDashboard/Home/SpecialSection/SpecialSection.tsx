@@ -17,7 +17,7 @@ const cardData = [
     bundleIcon: "⚡",
     image: img1,
     description: ["5 Screen", "30 Days", "3 Creatives"],
-    price: "$5,995 BSD",
+    price: "5,995 ",
     id: "/details/1",
   },
   {
@@ -26,7 +26,7 @@ const cardData = [
     bundleIcon: "⚡",
     image: img2,
     description: ["5 Screen", "30 Days", "3 Creatives"],
-    price: "$5,995 BSD",
+    price: "5,995 ",
     id: "/details/2",
   },
   {
@@ -35,7 +35,7 @@ const cardData = [
     bundleIcon: "🔥",
     image: img2,
     description: ["5 Screen", "30 Days", "3 Creatives"],
-    price: "$5,995 BSD",
+    price: "5,995 ",
     id: "/details/3",
   },
   {
@@ -44,7 +44,7 @@ const cardData = [
     bundleIcon: "💡",
     image: img1,
     description: ["5 Screen", "45 Days", "5 Creatives"],
-    price: "$7,995 BSD",
+    price: "7,995 ",
     id: "/details/4",
   },
   {
@@ -53,7 +53,7 @@ const cardData = [
     bundleIcon: "🔧",
     image: img3,
     description: ["10 Screen", "60 Days", "10 Creatives"],
-    price: "$10,995 BSD",
+    price: "10,995 ",
     id: "/details/5",
   },
   {
@@ -62,7 +62,7 @@ const cardData = [
     bundleIcon: "🚀",
     image: img1,
     description: ["3 Screen", "15 Days", "2 Creatives"],
-    price: "$2,995 BSD",
+    price: "2,995 ",
     id: "/details/6",
   },
   {
@@ -71,7 +71,7 @@ const cardData = [
     bundleIcon: "🏆",
     image: img2,
     description: ["10 Screen", "90 Days", "15 Creatives"],
-    price: "$12,995 BSD",
+    price: "12,995 ",
     id: "/details/7",
   },
   {
@@ -80,7 +80,7 @@ const cardData = [
     bundleIcon: "💎",
     image: img3,
     description: ["15 Screen", "120 Days", "20 Creatives"],
-    price: "$15,995 BSD",
+    price: "15,995 ",
     id: "/details/8",
   },
   {
@@ -89,7 +89,7 @@ const cardData = [
     bundleIcon: "✨",
     image: img1,
     description: ["20 Screen", "150 Days", "25 Creatives"],
-    price: "$19,995 BSD",
+    price: "19,995 ",
     id: "/details/9",
   },
 ];
@@ -97,13 +97,13 @@ const cardData = [
 const SpecialSection = () => {
   return (
     <div className="mt-20 relative">
-      <h1 className="text-2xl font-semibold text-center">Special </h1>
-      <Carousel className="w-full mt-6">
+      <h1 className="text-3xl font-semibold text-center">Special </h1>
+      <Carousel className="w-full mt-0">
         <CarouselContent>
           {cardData.map((card, index) => (
             <CarouselItem
               key={index}
-              className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 "
+              className="md:basis-1/2 lg:basis-1/2 xl:basis-1/4 "
             >
               <SpecialCard {...card} />
             </CarouselItem>

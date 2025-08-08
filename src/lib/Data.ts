@@ -1,127 +1,231 @@
-import img from '../assets/featured.jpg'
-import rating from '../assets/Home/rating.png'
-export const locationData = [
+import { ILocation } from '@/components/Modules/UserDashboard/Home/HomeTabs/LocationCard';
+import img from '../assets/featured.jpg';
+import rating from '../assets/Home/rating.png';
+
+
+
+export const locationData: ILocation[] = [
   {
-    "id": "1",
-    "title": "Piccadilly Circus, London",
-    "description": "Dominate a key European intersection with iconic digital billboards",
-    "image": img
+    id: "1",
+    image: img,
+    title: "Piccadilly Circus, London",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Dominate a key European intersection with iconic digital billboards."
   },
   {
-    "id": "2",
-    "title": "Times Square, NYC",
-    "description": "Reach millions in the heart of global commerce and entertainment",
-    "image": img
+    id: "2",
+    image: img,
+    title: "Times Square, NYC",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Reach millions in the heart of global commerce and entertainment."
   },
   {
-    "id": "3",
-    "title": "Shibuya Crossing, Tokyo",
-    "description": "Capture attention in one of the world's busiest pedestrian crossings",
-    "image": img
+    id: "3",
+    image: img,
+    title: "Shibuya Crossing, Tokyo",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Capture the attention of millions at the world’s busiest pedestrian crossing."
   },
   {
-    "id": "4",
-    "title": "The Bund, Shanghai",
-    "description": "Witness the iconic skyline of Shanghai with digital advertising",
-    "image": img
+    id: "4",
+    image: img,
+    title: "Champs-Élysées, Paris",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Showcase your brand on the most famous avenue in Paris."
   },
   {
-    "id": "5",
-    "title": "Red Square, Moscow",
-    "description": "Explore Russia's famous landmarks while viewing dynamic billboards",
-    "image": img
+    id: "5",
+    image: img,
+    title: "Gangnam District, Seoul",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Display your message in South Korea’s trendiest neighborhood."
   },
   {
-    "id": "6",
-    "title": "Dubai Marina, UAE",
-    "description": "Experience futuristic digital billboards in Dubai's renowned marina",
-    "image": img
+    id: "6",
+    image: img,
+    title: "Sydney Harbour, Sydney",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Iconic views and massive audience in Sydney’s core."
   },
   {
-    "id": "7",
-    "title": "Fifth Avenue, New York",
-    "description": "An upscale area with breathtaking billboards in the heart of NYC",
-    "image": img
+    id: "7",
+    image: img,
+    title: "Gangnam District, Seoul",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Display your message in South Korea’s trendiest neighborhood."
   },
   {
-    "id": "8",
-    "title": "Las Vegas Strip, USA",
-    "description": "The ultimate hub for flashing lights and dynamic advertising",
-    "image": img
+    id: "8",
+    image: img,
+    title: "Sydney Harbour, Sydney",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Iconic views and massive audience in Sydney’s core."
   },
   {
-    "id": "9",
-    "title": "Shinjuku, Tokyo",
-    "description": "The lively district of Shinjuku is illuminated by digital billboards",
-    "image": img
-  },
-  {
-    "id": "10",
-    "title": "Oxford Street, London",
-    "description": "Witness London’s busiest shopping street illuminated with advertisements",
-    "image": img
-  },
-  {
-    "id": "11",
-    "title": "Times Square East, NYC",
-    "description": "The east side of Times Square showcasing digital media and advertising",
-    "image": img
-  },
-  {
-    "id": "12",
-    "title": "King's Cross, London",
-    "description": "An iconic transport hub with immersive digital billboards",
-    "image": img
-  },
-  {
-    "id": "13",
-    "title": "Piazza del Duomo, Milan",
-    "description": "Milan's famous landmark surrounded by dynamic advertising displays",
-    "image": img
-  },
-  {
-    "id": "14",
-    "title": "Mall of America, Minnesota",
-    "description": "Experience billboards in one of the largest malls in the USA",
-    "image": img
-  },
-  {
-    "id": "15",
-    "title": "Shenzhen, China",
-    "description": "The modern city of Shenzhen illuminated with high-tech billboards",
-    "image": img
-  },
-  {
-    "id": "16",
-    "title": "Harajuku, Tokyo",
-    "description": "A vibrant district in Tokyo featuring the latest digital advertising",
-    "image": img
-  },
-  {
-    "id": "17",
-    "title": "Times Square West, NYC",
-    "description": "The west side of Times Square, famous for its extravagant digital displays",
-    "image": img
-  },
-  {
-    "id": "18",
-    "title": "Roppongi Hills, Tokyo",
-    "description": "A high-end district in Tokyo featuring luxurious digital billboards",
-    "image": img
-  },
-  {
-    "id": "19",
-    "title": "Bucharest, Romania",
-    "description": "The capital of Romania with a growing digital billboard presence",
-    "image": img
-  },
-  {
-    "id": "20",
-    "title": "Hollywood Boulevard, LA",
-    "description": "Hollywood's iconic street illuminated with massive digital ads",
-    "image": img
+    id: "9",
+    image: img,
+    title: "La Rambla, Barcelona",
+    category: "new",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Promote your brand in one of the busiest streets in Europe."
   }
-]
+  ,
+  {
+    id: "1",
+    image: img,
+    title: "Las Vegas Strip",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Stand out in the entertainment capital of the world."
+  },
+  {
+    id: "2",
+    image: img,
+    title: "Hollywood Boulevard, Los Angeles",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Promote your brand on the world-famous walk of fame."
+  },
+  {
+    id: "3",
+    image: img,
+    title: "Central Park South, NYC",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Reach tourists and locals alike in New York’s green heart."
+  },
+  {
+    id: "4",
+    image: img,
+    title: "Potsdamer Platz, Berlin",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "A prime spot in Berlin for innovative outdoor advertising."
+  },
+  {
+    id: "5",
+    image: img,
+    title: "Marina Bay, Singapore",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Premium exposure at Singapore’s most prestigious waterfront."
+  },
+  {
+    id: "6",
+    image: img,
+    title: "Downtown Dubai",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "The largest mall and entertainment center in the Middle East."
+  },
+  {
+    id: "7",
+    image: img,
+    title: "Marina Bay, Singapore",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Premium exposure at Singapore’s most prestigious waterfront."
+  },
+  {
+    id: "8",
+    image: img,
+    title: "Downtown Dubai",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "The largest mall and entertainment center in the Middle East."
+  },
+  {
+    id: "9",
+    image: img,
+    title: "Bondi Beach, Sydney",
+    category: "top",
+    screenSize: "15m x 10m (approx. 49ft x 33ft)",
+    description: "Get your message noticed on Australia’s most iconic beach."
+  }
+  ,
+  {
+    id: "1",
+    image: img,
+    title: "Sydney CBD",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Connect with Sydney’s bustling business audience."
+  },
+  {
+    id: "2",
+    image: img,
+    title: "Union Square, San Francisco",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Attract attention in the heart of Silicon Valley."
+  },
+  {
+    id: "3",
+    image: img,
+    title: "Oxford Street, London",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "London’s busiest shopping street – get noticed."
+  },
+  {
+    id: "4",
+    image: img,
+    title: "Buckhead, Atlanta",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Premium digital boards in Atlanta’s luxury district."
+  },
+  {
+    id: "5",
+    image: img,
+    title: "Yonge-Dundas Square, Toronto",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Toronto’s answer to Times Square, with massive reach."
+  },
+  {
+    id: "6",
+    image: img,
+    title: "Downtown Miami",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Engage locals and tourists in a dynamic, thriving city."
+  },
+  {
+    id: "7",
+    image: img,
+    title: "Yonge-Dundas Square, Toronto",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Toronto’s answer to Times Square, with massive reach."
+  },
+  {
+    id: "8",
+    image: img,
+    title: "Downtown Miami",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Engage locals and tourists in a dynamic, thriving city."
+  },
+  {
+    id: "9",
+    image: img,
+    title: "Leicester Square, London",
+    category: "fav",
+    screenSize: "10m x 5m (approx. 33ft x 16ft)",
+    description: "Attract attention in London’s famous entertainment district."
+  }
+];
+
+
 
 export const StepsData = [
   {

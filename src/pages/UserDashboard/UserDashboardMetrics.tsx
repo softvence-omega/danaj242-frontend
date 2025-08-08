@@ -1,6 +1,7 @@
 import AnalyticsSection from "@/components/Modules/UserDashboard/Dashboard/Analytics/AnalyticsSection";
 import ResponsiveBillboardMap from "@/components/Modules/UserDashboard/Dashboard/BillboardMap/ResponsiveBillboard";
 import NewCampaignSection from "@/components/Modules/UserDashboard/Dashboard/NewCampaign/NewCampaign";
+import { RecentCampaignsSection } from "@/components/Modules/UserDashboard/Dashboard/RecentCampaigns/RecentCampaign";
 import { StatsSection } from "@/components/Modules/UserDashboard/Dashboard/Stats/StatsSection";
 import { UserDashboardNavbar } from "@/components/Modules/UserDashboard/UserDashboardNavbar";
 
@@ -18,6 +19,7 @@ const UserDashboardMetrics = () => {
       </div>
       <AnalyticsSection />
       <NewCampaignSection />
+      <RecentCampaignsSection />
     </div>
   );
 };

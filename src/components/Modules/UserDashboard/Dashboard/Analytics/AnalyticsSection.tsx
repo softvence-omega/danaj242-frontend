@@ -18,7 +18,7 @@ export default function AnalyticsSection() {
         </div>
 
         {/* Right Side - Conversions & Clicks */}
-        <div className="space-y-6 md:space-y-0 xl:w-[40%]">
+        <div className="space-y-4 xl:space-y-0  xl:w-[40%] ">
           <ConversionsChart
             data={analyticsData.conversionsData}
             totalConversions={analyticsData.totalConversions}

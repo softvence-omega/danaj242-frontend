@@ -111,14 +111,17 @@ export function ClicksChart({ data, totalClicks }: ClicksChartProps) {
   );
   if (!isClient) {
     return (
-      <div className="bg-[#0B1739] rounded-xl p-4 h-[280px] flex items-center justify-center">
+      <div className="bg-[#0B1739] rounded-xl p-4  h-[280px] flex items-center justify-center">
         <div className="text-title-color">Loading chart...</div>
       </div>
     );
   }
 
   return (
-    <div className="bg-[#0B1739] rounded-br-xl p-4 border-r border-b border-[#343B4F]">
+    <div
+      className="bg-[#0B1739] xl:border-l-0  rounded-l-lg xl:rounded-l-none border-t xl:border-t-0 rounded-t-xl
+    xl:rounded-t-none rounded-r-lg   xl:border-t-none  p-4 border-r border-l xl:border-l-none border-b rounded-br-lg  border-[#343B4F]"
+    >
       {/* Header */}
 
       <MetricCard

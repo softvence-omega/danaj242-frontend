@@ -1,3 +1,5 @@
+import { JSX } from "react";
+
 interface RatingComponentProps {
   rating: number;
   maxRating?: number;
@@ -9,14 +11,13 @@ export default function RatingComponent({
   maxRating = 5,
   size = 16,
 }: RatingComponentProps) {
-  const stars = [];
+  const stars: JSX.Element[] = [];
 
   for (let i = 1; i <= maxRating; i++) {
     const fillPercentage = Math.min(Math.max(rating - (i - 1), 0), 1) * 100;
 
     stars.push(
       <div
-        key={i}
         className="relative inline-block"
         style={{ width: size, height: size }}
       >

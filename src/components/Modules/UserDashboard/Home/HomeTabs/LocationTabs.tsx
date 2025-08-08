@@ -1,20 +1,15 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useState } from "react";
-import { favourites, newArrivals, topSellers } from "..";
+
+import { locationData } from "@/lib/Data";
 import { LocationCard } from "./LocationCard";
 
 export default function LocationTabs() {
-  const [favs, setFavs] = useState<Set<string>>(new Set());
+  const [fav, setFav] = useState<Set<string>>(new Set());
   const [tab, setTab] = useState("new");
 
-  const dataMap = {
-    new: newArrivals,
-    top: topSellers,
-    favs: favourites,
-  };
-
   function toggleFav(id: string) {
-    setFavs((prev) =>
+    setFav((prev) =>
       prev.has(id)
         ? new Set([...prev].filter((favId) => favId !== id))
         : new Set(prev).add(id)
@@ -41,9 +36,9 @@ export default function LocationTabs() {
           TOP SELLERS
         </TabsTrigger>
         <TabsTrigger
-          value="favs"
+          value="fav"
           className={`text-white cursor-pointer text-sm font-semibold ${
-            tab === "favs" ? "font-semibold" : "font-normal"
+            tab === "fav" ? "font-semibold" : "font-normal"
           }`}
         >
           FAVOURITES
@@ -52,22 +47,28 @@ export default function LocationTabs() {
 
       <TabsContent value="new">
         <LocationCard
-          locations={dataMap["new"]}
-          favs={favs}
+          locations={locationData.filter(
+            (location) => location.category === "new"
+          )}
+          fav={fav}
           onToggleFav={toggleFav}
         />
       </TabsContent>
       <TabsContent value="top">
         <LocationCard
-          locations={dataMap["top"]}
-          favs={favs}
+          locations={locationData.filter(
+            (location) => location.category === "top"
+          )}
+          fav={fav}
           onToggleFav={toggleFav}
         />
       </TabsContent>
-      <TabsContent value="favs">
+      <TabsContent value="fav">
         <LocationCard
-          locations={dataMap["favs"]}
-          favs={favs}
+          locations={locationData.filter(
+            (location) => location.category === "fav"
+          )}
+          fav={fav}
           onToggleFav={toggleFav}
         />
       </TabsContent>

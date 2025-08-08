@@ -61,7 +61,7 @@ export function UserDashboardSidebar() {
       </div>
 
       <div className="px-6  mt-10">
-        <Link to="/new-campaign">
+        <Link to="/user-dashboard/new-campaign">
           {" "}
           <CommonDashboardButton title="New Campaign" Icon={Plus} />
         </Link>
